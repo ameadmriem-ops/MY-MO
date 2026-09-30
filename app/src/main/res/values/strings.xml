@@ -1,0 +1,93 @@
+<resources>
+    <string name="app_name">AnimeStream</string>
+    <string name="app_tagline">بوابتك لعالم الأنمي اللامحدود</string>
+
+    <!-- Navigation -->
+    <string name="nav_home">الرئيسية</string>
+    <string name="nav_search">البحث</string>
+    <string name="nav_favorites">المفضلة</string>
+    <string name="nav_downloads">التنزيلات</string>
+    <string name="nav_profile">حسابي</string>
+    <string name="nav_admin">لوحة الإدارة</string>
+
+    <!-- Home Sections -->
+    <string name="section_featured">أنميات مميزة</string>
+    <string name="section_popular">الأكثر مشاهدة</string>
+    <string name="section_latest">أحدث الأنميات المضافة</string>
+    <string name="section_continue_watching">تابع المشاهدة</string>
+    <string name="section_action">أكشن ومغامرات</string>
+    <string name="section_drama">دراما وتشويق</string>
+    <string name="section_fantasy">فانتازيا وخيال</string>
+    <string name="section_ongoing">مستمر حالياً</string>
+    <string name="section_completed">مكتمل</string>
+    <string name="view_all">عرض الكل</string>
+    <string name="watch_now">شاهد الآن</string>
+    <string name="details">التفاصيل</string>
+
+    <!-- Auth -->
+    <string name="login">تسجيل الدخول</string>
+    <string name="register">إنشاء حساب جديد</string>
+    <string name="email">البريد الإلكتروني</string>
+    <string name="password">كلمة المرور</string>
+    <string name="confirm_password">تأكيد كلمة المرور</string>
+    <string name="name">الاسم الكامل</string>
+    <string name="forgot_password">نسيت كلمة المرور؟</string>
+    <string name="reset_password">إعادة ضبط كلمة المرور</string>
+    <string name="google_sign_in">المتابعة باستخدام Google</string>
+    <string name="or_divider">أو</string>
+    <string name="already_have_account">لديك حساب بالفعل؟ سجل دخولك</string>
+    <string name="dont_have_account">ليس لديك حساب؟ أنشئ حساباً جديداً</string>
+    <string name="logout">تسجيل الخروج</string>
+
+    <!-- Details & Player -->
+    <string name="seasons">المواسم</string>
+    <string name="episodes">الحلقات</string>
+    <string name="season_prefix">الموسم </string>
+    <string name="episode_prefix">الحلقة </string>
+    <string name="add_to_favorites">إضافة للمفضلة</string>
+    <string name="remove_from_favorites">إزالة من المفضلة</string>
+    <string name="share">مشاركة</string>
+    <string name="download">تنزيل</string>
+    <string name="watch_episode">مشاهدة الحلقة</string>
+    <string name="next_episode">الحلقة التالية</string>
+    <string name="prev_episode">الحلقة السابقة</string>
+    <string name="retry">إعادة المحاولة</string>
+    <string name="error_loading_video">تعذر تشغيل الفيديو، يرجى المحاولة لاحقاً أو تجربة الرابط البديل</string>
+    <string name="try_alternative_stream">تجربة الرابط البديل</string>
+
+    <!-- Rewarded Ad Dialog -->
+    <string name="ad_dialog_title">مشاهدة الحلقة</string>
+    <string name="ad_dialog_desc">للمتابعة والاستمتاع بمشاهدة الحلقة بجودة عالية، يرجى مشاهدة إعلان قصير لدعم التطبيق.</string>
+    <string name="ad_dialog_watch_btn">مشاهدة الإعلان والمتابعة</string>
+    <string name="ad_dialog_cancel">إلغاء</string>
+    <string name="ad_loading">جاري تجهيز الإعلان…</string>
+    <string name="ad_failed_continue">تعذر تحميل الإعلان، يمكنك المشاهدة مباشرة الآن.</string>
+
+    <!-- Admin -->
+    <string name="admin_dashboard">لوحة التحكم والمشرف</string>
+    <string name="admin_stats">إحصائيات النظام</string>
+    <string name="admin_total_users">إجمالي المستخدمين</string>
+    <string name="admin_total_anime">إجمالي الأنميات</string>
+    <string name="admin_total_episodes">إجمالي الحلقات</string>
+    <string name="admin_total_views">إجمالي المشاهدات</string>
+    <string name="admin_add_anime">إضافة أنمي جديد</string>
+    <string name="admin_edit_anime">تعديل أنمي</string>
+    <string name="admin_manage_seasons">إدارة المواسم والحلقات</string>
+    <string name="admin_add_season">إضافة موسم</string>
+    <string name="admin_add_episode">إضافة حلقة</string>
+    <string name="admin_edit_episode">تعديل الحلقة</string>
+    <string name="admin_delete_confirm">هل أنت متأكد من الحذف؟</string>
+    <string name="admin_save">حفظ التغييرات</string>
+    <string name="admin_upload_poster">رفع بوستر الأنمي</string>
+    <string name="admin_upload_banner">رفع بانر الأنمي</string>
+    <string name="admin_upload_thumb">رفع صورة مصغرة للحلقة</string>
+
+    <!-- Common & Errors -->
+    <string name="loading">جاري التحميل…</string>
+    <string name="no_internet">لا يوجد اتصال بالإنترنت</string>
+    <string name="no_results">لم يتم العثور على نتائج</string>
+    <string name="empty_favorites">قائمة المفضلة فارغة، أضف بعض الأنميات الآن!</string>
+    <string name="empty_history">لا يوجد سجل مشاهدة حتى الآن.</string>
+    <string name="empty_downloads">لم تقم بتنزيل أي حلقات بعد.</string>
+    <string name="search_hint">ابحث عن اسم الأنمي، التصنيف، أو الكلمات الدلالية…</string>
+</resources>

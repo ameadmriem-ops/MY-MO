@@ -1,0 +1,6 @@
+{
+  "name": "AnimeStream",
+  "description": "تطبيق متكامل لمشاهدة وإدارة الأنمي مع مشغل فيديو عالي الجودة، دعم الإعلانات المكافأة، المفضلة، سجل المشاهدة، ولوحة تحكم متقدمة للمشرف",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

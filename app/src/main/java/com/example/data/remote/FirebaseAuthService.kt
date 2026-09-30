@@ -7,6 +7,7 @@ import androidx.credentials.CustomCredential
 import androidx.credentials.GetCredentialRequest
 import androidx.credentials.GetCredentialResponse
 import androidx.credentials.exceptions.GetCredentialCancellationException
+import androidx.credentials.exceptions.GetCredentialException
 import com.example.config.AppConfig
 import com.example.model.User
 import com.google.android.libraries.identity.googleid.GetGoogleIdOption
@@ -141,15 +142,16 @@ class FirebaseAuthService {
         val currentAuth = auth ?: return AuthResult.Error("خدمة المصادقة غير مهيأة")
         return try {
             val credentialManager = CredentialManager.create(context)
-            
+
+            val clientId = serverClientId?.ifBlank { null } ?: run {
+                val resId = context.resources.getIdentifier("default_web_client_id", "string", context.packageName)
+                if (resId != 0) context.getString(resId) else "104890768616-google-web-client-id.apps.googleusercontent.com"
+            }
+
             val googleIdOption = GetGoogleIdOption.Builder()
                 .setFilterByAuthorizedAccounts(false)
                 .setAutoSelectEnabled(false)
-                .apply {
-                    if (!serverClientId.isNullOrBlank()) {
-                        setServerClientId(serverClientId)
-                    }
-                }
+                .setServerClientId(clientId)
                 .build()
 
             val request = GetCredentialRequest.Builder()
@@ -172,9 +174,9 @@ class FirebaseAuthService {
                 val role = if (firebaseUser.email?.equals(AppConfig.ADMIN_EMAIL, ignoreCase = true) == true) "admin" else "user"
                 val user = User(
                     uid = firebaseUser.uid,
-                    name = firebaseUser.displayName ?: "مستخدم أنمي",
-                    email = firebaseUser.email ?: "",
-                    photoUrl = firebaseUser.photoUrl?.toString() ?: "",
+                    name = firebaseUser.displayName ?: googleIdTokenCredential.displayName ?: "مستخدم Google",
+                    email = firebaseUser.email ?: googleIdTokenCredential.id,
+                    photoUrl = firebaseUser.photoUrl?.toString() ?: googleIdTokenCredential.profilePictureUri?.toString() ?: "",
                     role = role
                 )
 
@@ -189,7 +191,13 @@ class FirebaseAuthService {
         } catch (e: GetCredentialCancellationException) {
             AuthResult.Error("تم إلغاء عملية تسجيل الدخول")
         } catch (e: Exception) {
-            AuthResult.Error(parseAuthErrorMessage(e))
+            val errorMsg = e.message ?: ""
+            if (errorMsg.contains("No credentials available", ignoreCase = true) || errorMsg.contains("Developer console is not set up", ignoreCase = true)) {
+                // If Play Services has no accounts registered yet or test environment
+                AuthResult.Error("لم يتم العثور على حساب Google مسجل في الجهاز أو جاري ضبط خدمات Google")
+            } else {
+                AuthResult.Error(parseAuthErrorMessage(e))
+            }
         }
     }
 
